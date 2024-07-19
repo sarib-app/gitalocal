@@ -1,0 +1,32 @@
+{
+  "cli": {
+    "version": ">= 7.3.0",
+    "appVersionSource":"remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+
+      "autoIncrement":true
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./google-services.json",
+        "track": "internal"
+      },
+      "ios": {
+        "appleId": "karan.s.vani@gmail.com",
+        "ascAppId": "6479674888",
+        "appleTeamId": "5VCPF6D99Y"
+      }
+    }
+  }
+}
