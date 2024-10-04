@@ -26,11 +26,6 @@ const Stack = createStackNavigator();
 
 const App = () => {
 const [initialRoute,setInitialRoute]=useState(null)
-
-
-
-
-
 useEffect(()=>{
 
   GetAsyncData()

@@ -15,7 +15,7 @@ import { useIsFocused } from '@react-navigation/native';
 import { BookGujarati } from '../../Global/Data/BookGujarati';
 import { BookEnglish } from '../../Global/Data/BookEnglish';
 import { BookHindi } from '../../Global/Data/BookHindi';
-import { Entypo } from '@expo/vector-icons';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 import addToFavorites from './addToFav';
 import removeFromFavorites from './RemoveFav';
 import fetchFavorites from './fetchFav';
@@ -26,6 +26,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
 import GoBack from '../../Global/Styling/BackButton';
 import { saveVerseAsRead } from '../../Components/GlobalCalls/SaveVerseProgress';
+import AudioPlayer from '../Audio/HandleAudioActions';
 const bannerId = Platform.OS === "ios" ? "ca-app-pub-9024884895292195/3410170858":"ca-app-pub-9024884895292195/6048078531"
 const adUnitId = __DEV__ ? TestIds.BANNER : bannerId;
 // const adUnitId = TestIds.INTERSTITIAL ;
@@ -207,19 +208,7 @@ function ChapterContent({item}){
 
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={()=> {
-                if(user){
-                 SaveVerse()
-                }
-                else{
-                 navigation.navigate("Login")
-
-                }
-                
-                }} style={{alignSelf:'flex-start'}}>
-                <Entypo  name="heart" size={24} color={added === "white"}/>
-
-              </TouchableOpacity>
+             
                 <Text style={{fontSize:20,color:Colors.lightTxtClr,fontWeight:'bold',marginBottom:10}}>
                     <Text style={{color:Colors.PrimaryColor}}>
                     Verse {item.verse_number}:  
@@ -233,7 +222,32 @@ function ChapterContent({item}){
                         </Text>
                         {highlightSearchTerm(" " + item.text.translation)}
                 </Text>
-               
+               <View style={{flexDirection:"row",justifyContent:'space-between',width:"95%"}}>
+<View
+style={{flexDirection:'row',alignItems:'center'}}
+>
+
+               <TouchableOpacity onPress={()=> {
+                if(user){
+                 SaveVerse()
+                }
+                else{
+                 navigation.navigate("Login")
+
+                }
+                
+                }} style={{}}>
+                <AntDesign  name="select1" size={24} color={Colors.PrimaryColor}/>
+
+              </TouchableOpacity>
+              <Text style={{color:Colors.lightTxtClr,marginLeft:10}}>
+                Mark as read
+              </Text>
+               </View>
+            <AudioPlayer/>
+</View>
+
+
                 {/* <Text style={{fontSize:20,color:Colors.lightTxtClr,fontWeight:'bold',marginBottom:10}}> 
                     <Text style={{color:Colors.PrimaryColor}}>
                     Commentary:  

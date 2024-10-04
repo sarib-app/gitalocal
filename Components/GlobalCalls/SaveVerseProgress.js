@@ -32,7 +32,7 @@ export const saveVerseAsRead = async (uid, chapterId, verseId) => {
       uid,
       chapter_id: chapterId,
       verse_id: verseId,
-      date_read: "July 10, 2024 at 3:21:56 AM UTC+5",
+      date_read: Timestamp.now(),
     });
 
     return { success: true, message: 'Verse marked as read successfully.' };

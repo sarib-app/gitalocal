@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, FontAwesome6, Ionicons } from '@expo/vector-icons';
 import LoginScreen from '../../Screens/Auth/Logins';
 import SignUpScreen from '../../Screens/Auth/SignUp';
 import { Colors } from '../../Global/Styling/Branding';
@@ -45,7 +45,7 @@ const BottomNavigation = () => {
           component={WeeklyProgress}
           options={{
             tabBarIcon: ({ color }) => (
-              <AntDesign name="setting" size={24} color={"white"} />
+              <FontAwesome6 name="ranking-star" size={24} color={"white"} />
             ),
             headerShown:false
 
@@ -56,7 +56,7 @@ const BottomNavigation = () => {
           component={DailyVerse}
           options={{
             tabBarIcon: ({ color }) => (
-              <AntDesign name="setting" size={24} color={"white"} />
+              <FontAwesome6 name="book-open-reader" size={24} color={"white"} />
             ),
             headerShown:false
 
@@ -67,7 +67,7 @@ const BottomNavigation = () => {
           component={DailyAlerts}
           options={{
             tabBarIcon: ({ color }) => (
-              <AntDesign name="setting" size={24} color={"white"} />
+              <Ionicons name="notifications" size={24} color={"white"} />
             ),
             headerShown:false
 

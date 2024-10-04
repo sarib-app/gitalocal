@@ -10,6 +10,7 @@ import night from '../../assets/images/night.jpg'
 import getCurrentTimeInfo from "../../Components/GlobalCalls/GetTimeZone";
 import { Timestamp } from "firebase/firestore";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import AudioPlayerGlobal from "../Audio/NewAudio";
 
 
 function DailyVerse(){
@@ -97,6 +98,7 @@ Daily Verse
        
 
       </>
+      <AudioPlayerGlobal/>
       <Text style={{color:Colors.lightTxtClr,textAlign:'center'}}>
         We bring to you daily verses so that you can stay connected to spirtuality.
       </Text>
